@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mahmoud Abdelghani | Portfolio</title>
+
+  <style>
+    :root {
+      --bg:#0f1115;
+      --panel:#161a22;
+      --ink:#e6e6e6;
+      --muted:#9aa4b2;
+      --brand:#58a6ff;
+      --brand-active:#7cc4ff;
+      --accent:#22c55e;
+      --shadow:0 8px 28px rgba(0,0,0,.45);
+      --radius:14px;
+    }
+    *{box-sizing:border-box;scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:"Segoe UI",Inter,Arial,sans-serif;line-height:1.8;font-size:1.15rem}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{color:var(--brand-active)}
+    .container{max-width:1100px;margin:auto;padding:80px 22px}
+    img{max-width:100%;display:block}
+    
+    /* ===== NAV ===== */
+    nav {
+      position:fixed;top:0;left:0;width:100%;z-index:1000;
+      background:rgba(15,17,21,0.9);backdrop-filter:blur(8px);
+      display:flex;justify-content:center;gap:24px;padding:14px 0;
+      border-bottom:1px solid rgba(255,255,255,0.05);
+    }
+    nav a{color:#e2e8f0;font-weight:500;transition:.2s;padding:6px 10px;border-radius:6px}
+    nav a.active{color:var(--brand-active);background:rgba(88,166,255,0.12);}
+
+    /* ===== HERO ===== */
+    .hero{display:grid;grid-template-columns:1fr 280px;align-items:center;gap:22px}
+    @media(max-width:900px){.hero{grid-template-columns:1fr}}
+    .hero-card{padding:26px;background:linear-gradient(180deg,#141925,#10131a);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .hero-card h1{font-size:2.8rem;margin:0;color:#fff}
+    .hero-card p{margin:8px 0 0;color:var(--muted);font-size:1.2rem}
+    .pfp{border-radius:var(--radius);box-shadow:var(--shadow);animation:float 6s ease-in-out infinite}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+    .section{margin:70px 0}
+    .section-title{font-size:1.8rem;font-weight:700;margin-bottom:24px;color:#fff}
+
+    .card{background:var(--panel);border-radius:var(--radius);border:1px solid rgba(255,255,255,.06);box-shadow:var(--shadow);overflow:hidden;transition:.3s}
+    .card-body{padding:18px}
+    .card:hover{transform:translateY(-5px) scale(1.02);border-color:var(--brand-active);box-shadow:0 8px 28px rgba(88,166,255,.4)}
+
+    /* ===== EDUCATION ===== */
+    .edu-grid{display:grid;grid-template-columns:120px 1fr;gap:20px;align-items:center}
+    @media(max-width:800px){.edu-grid{grid-template-columns:1fr}}
+
+    /* ===== PERSONAL INFO ===== */
+    .info-list{list-style:none;padding:0}
+    .info-list li{margin:6px 0;color:var(--ink)}
+
+    /* ===== SKILLS ===== */
+    .skill-section{margin-bottom:30px}
+    .skill-list{display:flex;flex-wrap:wrap;gap:10px}
+    .skill{padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);transition:.3s}
+    .skill:hover{background:rgba(88,166,255,.15);transform:scale(1.08)}
+
+    /* ===== PROJECTS ===== */
+    .project{display:grid;grid-template-columns:360px 1fr;gap:0;margin-bottom:20px;border-radius:var(--radius);overflow:hidden;background:var(--panel);border:1px solid rgba(255,255,255,.06);box-shadow:var(--shadow)}
+    .project img{width:100%;height:100%;object-fit:cover;min-height:220px;transition:.5s}
+    .project:hover img{transform:scale(1.05);filter:brightness(1.1)}
+    .project .body{padding:18px 20px}
+    .project h4{margin:0 0 8px;color:#e8f1ff}
+
+    @media(max-width:900px){.project{grid-template-columns:1fr}}
+
+    /* ===== CONTACT ===== */
+    .contact{display:flex;flex-wrap:wrap;gap:12px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);transition:.2s}
+    .btn:hover{transform:translateY(-2px);background:rgba(255,255,255,.06)}
+    .btn img{width:18px;height:18px}
+    .footnote{color:var(--muted);font-size:.92rem;margin-top:8px}
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#personal">Personal Info</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#certificates">Certificates</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="container">
+    <!-- HERO -->
+    <section class="hero section" id="hero">
+      <div class="hero-card">
+        <h1>Mahmoud Abdelghani</h1>
+        <p>Computer & System Engineering Student<br>Zagazig University — Class of 2027<br>Mobile & Flutter Developer</p>
+      </div>
+      <img class="pfp" src="images/me.jpg" alt="Mahmoud Abdelghani"/>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <h3 class="section-title">About Me</h3>
+      <p>
+        As a Computer &amp; System Engineering student, I am deeply passionate about the field of software development.
+        My main focus is <b>mobile app development using Flutter</b>, but I also enjoy experimenting with desktop, backend, and system-level concepts.
+        I believe in continuous learning, teamwork, and the power of writing clean, maintainable code.
+      </p>
+      <p>
+        During my journey, I actively practiced <b>problem solving</b> through the ICPC Zagazig Community,
+        where I trained on algorithms, data structures, and competitive programming challenges. This built a strong base in logical thinking and algorithmic design.
+        My ultimate goal is to become a versatile engineer capable of building impactful solutions across different platforms.
+      </p>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="section" id="education">
+      <h3 class="section-title">Education</h3>
+      <div class="edu-grid">
+        <img src="images/logo.png" alt="Zagazig Engineering Logo"/>
+        <div class="card">
+          <div class="card-body">
+            <h4>Bachelor's in Computer & System Engineering</h4>
+            <p>Zagazig University — Expected 2027</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PERSONAL INFO -->
+    <section class="section" id="personal">
+      <h3 class="section-title">Personal Info</h3>
+      <div class="card">
+        <div class="card-body">
+          <ul class="info-list">
+            <li><b>Date of Birth:</b> 10 / 7 / 2004</li>
+            <li><b>Gender:</b> Male</li>
+            <li><b>Nationality:</b> Egyptian</li>
+            <li><b>Military Status:</b> Postponed</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <h3 class="section-title">Skills</h3>
+      <div class="skill-section card"><div class="card-body">
+        <h4>Programming Languages</h4>
+        <div class="skill-list">
+          <span class="skill">Java</span><span class="skill">Dart</span><span class="skill">C</span><span class="skill">C++</span>
+        </div>
+      </div></div>
+
+      <div class="skill-section card"><div class="card-body">
+        <h4>Development Tools & IDEs</h4>
+        <div class="skill-list">
+          <span class="skill">Android Studio</span><span class="skill">IntelliJ IDEA</span><span class="skill">CodeBlocks</span><span class="skill">MySQL Workbench</span>
+        </div>
+      </div></div>
+
+      <div class="skill-section card"><div class="card-body">
+        <h4>Mobile Development</h4>
+        <div class="skill-list"><span class="skill">Flutter (Basics)</span></div>
+      </div></div>
+
+      <div class="skill-section card"><div class="card-body">
+        <h4>Desktop Development</h4>
+        <div class="skill-list"><span class="skill">JavaFX (Basics)</span></div>
+      </div></div>
+
+      <div class="skill-section card"><div class="card-body">
+        <h4>Problem Solving</h4>
+        <div class="skill-list"><span class="skill">Data Structures</span><span class="skill">Algorithms</span><span class="skill">Competitive Programming</span></div>
+      </div></div>
+
+      <div class="skill-section card"><div class="card-body">
+        <h4>Database</h4>
+        <div class="skill-list"><span class="skill">SQL (Basics)</span></div>
+      </div></div>
+
+      <div class="skill-section card"><div class="card-body">
+        <h4>Version Control</h4>
+        <div class="skill-list"><span class="skill">Git</span><span class="skill">GitHub</span></div>
+      </div></div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section" id="experience">
+      <h3 class="section-title">Experience & Training</h3>
+      <div class="card"><div class="card-body">
+        <ul>
+          <li><b>ICPC Zagazig Community</b> — Competitive programming participant (Level 0 & Level 1).</li>
+          <li><b>Mobile Development Trainee – Zag Systems</b> — Built basic Flutter apps, state management, UI.</li>
+          <li><b>Zigzag Student Activity</b> — Flutter workshops & teamwork.</li>
+          <li><b>ITI Zagazig</b> — Flutter Training.</li>
+          <li><b>Egypt Digital Pioneers Initiative (MCIT)</b> — Flutter Training Program.</li>
+        </ul>
+      </div></div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <h3 class="section-title">Projects</h3>
+      <a href="https://github.com/ibrahim-abd-elhadi/Bricks_breacker_javafx-final" target="_blank" class="project">
+        <img src="images/BricksBreacker.png" alt="Bricks Breaker"/>
+        <div class="body"><h4>Bricks Breaker</h4><p>Arcade-style game with Java & JavaFX.</p></div>
+      </a>
+      <div class="project">
+        <img src="images/AttendMeApp.png" alt="AttendMe App"/>
+        <div class="body"><h4>AttendMe App</h4><p>Android app for lecture attendance (Kotlin + SQL).</p></div>
+      </div>
+      <a href="https://github.com/mahmoudAbdelghani2/File_System_Simulation" target="_blank" class="project">
+        <img src="images/FileSystemSimulation.jpg" alt="File System Simulation"/>
+        <div class="body"><h4>File System Simulation</h4><p>Simulated file system with Java & JavaFX.</p></div>
+      </a>
+      <a href="https://github.com/mahmoudAbdelghani2/File_Explorer_App" target="_blank" class="project">
+        <img src="images/FileExplorerApp.jpg" alt="File Explorer"/>
+        <div class="body"><h4>File Explorer App</h4><p>Java & JavaFX file explorer with algorithms.</p></div>
+      </a>
+      <a href="https://github.com/MaHmoudHaBlaSs/Multi-Cycle-MIPS" target="_blank" class="project">
+        <img src="images/MIPS.png" alt="Multi-Cycle MIPS"/>
+        <div class="body"><h4>Multi-Cycle MIPS</h4><p>VHDL implementation of multi-cycle MIPS processor.</p></div>
+      </a>
+    </section>
+
+<!-- CERTIFICATES -->
+<section class="section" id="certificates">
+  <h3 class="section-title">Certificates</h3>
+  <div class="cert-grid">
+    <div class="cert-item" onclick="openModal('images/ICPC_LEVEL_ZERO.jpg', 'ICPC Level 0 Certificate')">
+      <img src="images/ICPC_LEVEL_ZERO.jpg" alt="ICPC Level 0"/>
+      <p>ICPC Level 0 Certificate</p>
+    </div>
+    <div class="cert-item" onclick="openModal('images/ICPC_LEVEL_ONE.png', 'ICPC Level 1 Certificate')">
+      <img src="images/ICPC_LEVEL_ONE.png" alt="ICPC Level 1"/>
+      <p>ICPC Level 1 Certificate</p>
+    </div>
+    <div class="cert-item" onclick="openModal('images/HTML_CSS.jpg', 'HTML & CSS Certificate')">
+      <img src="images/HTML_CSS.jpg" alt="HTML & CSS"/>
+      <p>HTML & CSS Certificate</p>
+    </div>
+    <div class="cert-item" onclick="openModal('images/C_PROGRAMMING.jpg', 'C Programming Certificate')">
+      <img src="images/C_PROGRAMMING.jpg" alt="C Programming"/>
+      <p>C Programming Certificate</p>
+    </div>
+    <div class="cert-item" onclick="openModal('images/OOP.jpg', 'Object-Oriented Programming Certificate')">
+      <img src="images/OOP.jpg" alt="OOP"/>
+      <p>OOP Certificate</p>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL -->
+<div id="imageModal" class="modal" onclick="closeModal(event)">
+  <span class="close" onclick="closeModal(event)">&times;</span>
+  <img class="modal-content" id="modalImg">
+  <div id="caption"></div>
+</div>
+
+<style>
+  /* GRID STYLE */
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 18px;
+  }
+  .cert-item {
+    background: var(--panel);
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: .3s;
+    text-align: center;
+  }
+  .cert-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: .3s;
+  }
+  .cert-item:hover img { transform: scale(1.05); }
+  .cert-item p {
+    margin: 10px 0;
+    font-size: .95rem;
+    color: var(--muted);
+  }
+
+  /* MODAL STYLE */
+  .modal {
+    display: none; /* 🔹 خليها none بس */
+    position: fixed;
+    z-index: 2000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(4px);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .modal img {
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    animation: zoom .3s ease;
+  }
+  @keyframes zoom {
+    from {transform: scale(0.6);}
+    to {transform: scale(1);}
+  }
+  .close {
+    position: absolute;
+    top: 20px; right: 30px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+  }
+  #caption {
+    margin-top: 10px;
+    text-align: center;
+    color: #ddd;
+    font-size: 1rem;
+  }
+</style>
+
+<script>
+  function openModal(src, caption) {
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImg");
+    const captionText = document.getElementById("caption");
+
+    modal.style.display = "flex"; // 🔹 هنا هو اللي يخليه يظهر
+    modalImg.src = src;
+    captionText.innerText = caption;
+  }
+
+  function closeModal(event) {
+    const modal = document.getElementById("imageModal");
+    if (event.target.id === "imageModal" || event.target.className === "close") {
+      modal.style.display = "none";
+    }
+  }
+</script>
+
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <h3 class="section-title">Contact</h3>
+      <div class="contact">
+        <a class="btn" href="mailto:mahmoudabdelgani346@gmail.com"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png"/> Email</a>
+        <a class="btn" href="https://wa.me/201001373691" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"/> WhatsApp</a>
+        <a class="btn" href="https://github.com/mahmoudAbdelghani2" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733553.png"/> GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/mahmoud-abdelghani-882b78294/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png"/> LinkedIn</a>
+        <a class="btn" href="https://www.facebook.com/profile.php?id=100051298262531" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"/> Facebook</a>
+      </div>
+      <p class="footnote">Based in Egypt — Sharqia — Zagazig</p>
+    </section>
+  </div>
+
+  <!-- JS for active nav -->
+  <script>
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("nav a");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach(sec => {
+        const top = sec.offsetTop - 150;
+        if (pageYOffset >= top) current = sec.getAttribute("id");
+      });
+      navLinks.forEach(a => {
+        a.classList.remove("active");
+        if (a.getAttribute("href") === "#" + current) a.classList.add("active");
+      });
+    });
+  </script>
+</body>
+</html>
